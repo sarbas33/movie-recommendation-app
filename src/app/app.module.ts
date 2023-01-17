@@ -14,7 +14,8 @@ import { Routes, Router, RouterModule } from '@angular/router';
 
 const appRoutes: Routes = [
   { path: 'tv', component: SliderTVComponent },
-   { path: '', component : SliderComponent}
+   { path: '', component : SliderComponent},
+   {path: 'movies', component: SliderComponent}
 ,
 ];
 

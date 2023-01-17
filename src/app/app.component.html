@@ -24,7 +24,7 @@
        <ul>
          <li class="active"><a (click)="OnClickMovie()">Home</a></li>
          <li ><a (click)="OnClickTV()">TV Shows</a></li>
-         <li><a href="#">Movies</a></li>
+         <li><a (click)="OnClickMoviesPage()">Movies</a></li>
          <li><a href="#">Latest</a></li>
          <li><a href="#">My List</a></li>
        </ul>
@@ -45,39 +45,4 @@
   }" >
         <router-outlet></router-outlet>
   </div>
-    <!---        
-  <div *ngIf="router.url === '/'">
-    <div class="body" style="margin-top: 30rem;">
-      <app-slider title="Trending" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
-      <app-slider title="Top Rated" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
-      <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
-      <app-slider title="Originals" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider>
-      <app-slider title="Popular" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
-    </div>
-  </div>
-  
-
- 
-    <router-outlet *ngIf="router.url === '/'">
-      <div class="body" style="margin-top: 30rem;">
-        <app-slider title="Trending" [movies]="trending" [sliderConfig]="sliderConfig"></app-slider>
-        <app-slider title="Top Rated" [movies]="topRated" [sliderConfig]="sliderConfig"></app-slider>
-        <app-slider title="Now Playing" [movies]="nowPlaying" [sliderConfig]="sliderConfig"></app-slider>
-        <app-slider title="Originals" [movies]="originals" [sliderConfig]="sliderConfig"></app-slider>
-        <app-slider title="Popular" [movies]="popular" [sliderConfig]="sliderConfig"></app-slider>
-      </div>
-    </router-outlet>
-    <router-outlet *ngIf="router.url === '/tv'">
-      <div class="body" style="margin-top: 30rem;">
-        <app-slider-tv title="Trending" [tvshows]="trendingtv" [sliderConfig]="sliderConfig"></app-slider-tv>
-        <app-slider-tv title="Top Rated" [tvshows]="topRatedtv" [sliderConfig]="sliderConfig"></app-slider-tv>
-        <app-slider-tv title="Now Playing" [tvshows]="nowPlayingtv" [sliderConfig]="sliderConfig"></app-slider-tv>
-        <app-slider-tv title="Originals" [tvshows]="originalstv" [sliderConfig]="sliderConfig"></app-slider-tv>
-        <app-slider-tv title="Popular" [tvshows]="populartv" [sliderConfig]="sliderConfig"></app-slider-tv>
-      </div>
-    </router-outlet>
-
-  
-
-  -->
 </div>

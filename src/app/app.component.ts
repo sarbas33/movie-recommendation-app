@@ -43,6 +43,13 @@ export class AppComponent implements OnInit, OnDestroy {
     this.headerTitle = this.trending?.results[0].title;
     window.scrollTo(0,0);
   }
+  OnClickMoviesPage(){
+    console.log("Hello")
+    this.router.navigate(['movies']);
+    this.headerBGUrl = 'https://image.tmdb.org/t/p/original' + this.trending.results[0].backdrop_path;
+    this.headerTitle = this.trending?.results[0].title;
+    window.scrollTo(0,0);
+  }
   ngOnInit(): void {
     this.subs.push(this.movie.getTrending().subscribe(data => {
       this.trending = data;
