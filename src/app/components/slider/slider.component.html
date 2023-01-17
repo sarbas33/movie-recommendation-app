@@ -1,0 +1,55 @@
+
+<h2>Trending</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div  *ngFor="let m of trending.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}" (click)="OnClickMovie(m.backdrop_path,m.title)">
+        </div>
+      </div>
+  </div>
+</div>
+
+<h2>Top Rated</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div  *ngFor="let m of topRated.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}" (click)="OnClickMovie(m.backdrop_path,m.title)">
+        </div>
+      </div>
+  </div>
+</div>
+
+<h2>Popular</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div  *ngFor="let m of popular.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}" (click)="OnClickMovie(m.backdrop_path,m.title)">
+        </div>
+      </div>
+  </div>
+</div>
+
+<h2>Originals</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div  *ngFor="let m of originals.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}" (click)="OnClickMovie(m.backdrop_path,m.title)">
+        </div>
+      </div>
+  </div>
+</div>
+
+<h2>Now Playing</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div  *ngFor="let m of nowPlaying.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.title}}" (click)="OnClickMovie(m.backdrop_path,m.title)">
+        </div>
+      </div>
+  </div>
+</div>

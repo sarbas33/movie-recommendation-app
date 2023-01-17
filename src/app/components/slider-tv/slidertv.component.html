@@ -1,0 +1,35 @@
+<div>
+  <h2>Airing Today</h2>
+  <div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div *ngFor="let m of airingTodaytv.results" >
+          <img  class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.original_name}}" (click)="OnClickMovie(m.backdrop_path,m.original_name)">
+        </div>
+      </div>
+  </div>
+</div>
+<div>
+  <h2>Top Rated</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div *ngFor="let m of topRatedtv.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.original_name}}"  (click)="OnClickMovie(m.backdrop_path,m.original_name)">
+        </div>
+      </div>
+  </div>
+</div>
+</div>
+
+<h2>Popular</h2>
+<div class="movie">
+  <div class="movie__images">
+      <div class="movie-posters">
+        <div *ngFor="let m of populartv.results" >
+          <img class="movie-poster" src="https://image.tmdb.org/t/p/w200{{m?.poster_path}}" alt="{{m.original_name}}"  (click)="OnClickMovie(m.backdrop_path,m.original_name)">
+        </div>
+      </div>
+  </div>
+</div>
+</div>

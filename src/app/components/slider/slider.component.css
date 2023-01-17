@@ -1,0 +1,35 @@
+h2 {
+    font-size: x-large;
+    color: white;
+    padding-left: 20px
+}
+h2:hover{
+    color:darkcyan;
+}
+img {
+    border-radius: 5px;
+}
+.movie {
+    margin: 5px 0px 5px 5px;
+}
+.movie .movie__images .movie-posters {
+    width: 100%;
+    display: flex;
+    padding:  20px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+}
+
+.movie .movie__images .movie-poster {
+    padding: 3px;
+}
+
+.movie .movie__images .movie-posters ::-webkit-scrollbar{
+    display: none;
+}
+
+
+.movie .movie__images .movie-posters .movie-poster:hover {
+    transform: scale(1.15);
+    cursor: pointer;
+}
