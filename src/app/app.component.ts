@@ -16,25 +16,14 @@ export class AppComponent implements OnInit, OnDestroy {
   sticky = false;
   subs: Subscription[] = [];
   trending: Movies;
-  popular: Movies;
-  topRated: Movies;
-  originals: Movies;
-  nowPlaying: Movies;
   public headerTitle: string;
-
-  trendingtv: tvshows;
   populartv: tvshows;
-  topRatedtv: tvshows;
-  originalstv: tvshows;
-  airingTodaytv: tvshows;
-
   sliderConfig = {
     slidesToShow: 9,
     slidesToScroll: 2,
     arrows: true,
     autoplay: false
   };
-
   @ViewChild('stickHeader') header: ElementRef;
   headerBGUrl: string;
 
@@ -61,17 +50,8 @@ export class AppComponent implements OnInit, OnDestroy {
       this.headerTitle = this.trending?.results[0].title;
       console.log( 'https://image.tmdb.org/t/p/original' + this.trending.results[0].backdrop_path);
     }));
-    this.subs.push(this.movie.getPopularMovies().subscribe(data => this.popular = data));
-    this.subs.push(this.movie.getTopRated().subscribe(data => this.topRated = data));
-    this.subs.push(this.movie.getOriginals().subscribe(data => this.originals = data));
-    this.subs.push(this.movie.getNowPlaying().subscribe(data => this.nowPlaying = data));
-
     this.subs.push(this.tv.getPopularMovies().subscribe(data => this.populartv = data));
-    this.subs.push(this.tv.getTopRated().subscribe(data => this.topRatedtv = data));
-    this.subs.push(this.tv.getAiringToday().subscribe(data => this.airingTodaytv = data));
-
   }
-
   public changeBGURL(s: string, tit: string): void{
     this.headerBGUrl = s;
     this.headerTitle = tit;
@@ -80,12 +60,10 @@ export class AppComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.subs.map(s => s.unsubscribe());
   }
-
   @HostListener('window:scroll', ['$event'])
   // tslint:disable-next-line:typedef
   handleScroll() {
     const windowScroll = window.pageYOffset;
-
     if (windowScroll >= this.header.nativeElement.offsetHeight) {
       this.sticky = true;
     } else {
